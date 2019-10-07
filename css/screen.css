@@ -62,6 +62,9 @@
     --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
     --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
 
+    --global-inline-symbol-space: calc(var(--global-baseline) * 1.75);
+    --global-inline-symbol-qize: calc(var(--global-baseline) * 2.5);
+
     /* forms */
     --global-placeholder-color: var(--global-color-neutral-x-light);
     --global-input-backgroundColor: White;
@@ -935,6 +938,41 @@ more padding on the right to avoid overlap
     ---
     Password toggle custom checkbox
 */
+
+.c-password-toggle-container {
+    position: relative; /* Dit wordt later op position absolute gezet */
+    display: flex;
+}
+
+.c-password-toggle {
+    width: var(--global-inline-symbol-qize);
+    height: var(--global-inline-symbol-qize);
+    position: absolute;
+    top: var(--global-inline-symbol-space);
+    right: var(--global-inline-symbol-space);
+    /* pointer-events: none; */
+    fill: var(--global-color-neutral-x-light);
+}
+
+.c-password-toggle__checkbox {
+
+}
+
+.c-password-toggle__label {
+
+}
+
+.c-password-toggle__symbol {
+    position: absolute;
+}
+
+.c-password-toggle__symbol--show {
+
+}
+
+.c-password-toggle__symbol--hide {
+
+}
 
 /*------------------------------------*\
 #UTILITIES
