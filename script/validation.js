@@ -40,6 +40,17 @@ const doubleCheckEmail = function(){
     }
 };
 
+const doubleCheckPassword = function(){
+    if(!isEmpty(password.input.value)){
+        removeErrors(password.field);
+        password.input.removeEventListener('input', doubleCheckPassword);
+    }
+    else {
+        if(isEmpty(password.input.value)) password.errorMessage.innerHTML = 'This field is required';
+        else password.errorMessage.innerHTML = 'The password is not valid';
+    }
+};
+
 const enableInteraction = function(){
 
     email.input.addEventListener('blur', function(event){
@@ -59,6 +70,7 @@ const enableInteraction = function(){
         const typedInput = event.target.value;
         if(isEmpty(typedInput)){
             password.errorMessage.innerHTML = 'This field is required';
+            addErrors(password.field);
         } else password.errorMessage.innerHTML = 'The password is not valid';
 
         password.input.addEventListener('input' ,doubleCheckPassword);

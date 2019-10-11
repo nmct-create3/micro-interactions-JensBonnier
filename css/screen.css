@@ -612,6 +612,11 @@ input::placeholder {
     Everything form related here
 */
 
+.c-form-field--floating {
+    position: relative;
+}
+
+
 .c-form-field--option {
     display: flex;
     align-items: center;
@@ -620,7 +625,7 @@ input::placeholder {
 .has-error {
     --label-error-color: var(--global-error-color);
     --error-message-display: block;
-    
+
 }
 
 /*
@@ -656,6 +661,10 @@ input::placeholder {
     box-shadow: var(--label-error-color ,var(--global-input-focus-boxShadow));
 }
 
+.c-input:focus + .c-label--can-float, .c-label--can-float.is-floating {
+    transform: translateY( -24px );
+}
+
 /*
 Input password with toggle checkbox on top of it needs
 more padding on the right to avoid overlap
@@ -688,6 +697,20 @@ more padding on the right to avoid overlap
 
 .c-label--option {
     padding-bottom: 0;
+}
+
+.c-label--can-float{
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    padding: 4px 8px;
+
+    will-change: transform;
+
+    transform: translateY( 0 );
+    transition: transform 200ms ease-in-out;
+    box-shadow: 0 0 4px 4px rgba(255,255,255,0.8);
+    background: white;
 }
 
 .c-label__error-message {

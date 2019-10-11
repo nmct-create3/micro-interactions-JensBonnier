@@ -18,7 +18,8 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/screen.css">  
         <script src="script/app.js"></script>     
-        <script src="script/validation.js"></script>   
+        <script src="script/validation.js"></script>  
+        <script src="script/floating.js"></script> 
     </head>
     <body>
         <section class="o-row o-row--lg o-row--login">
@@ -35,6 +36,14 @@
                         <h2 class="c-card__title">
                             Sign in to your account
                         </h2>
+
+                        <p class="c-form-field c-form-field--floating">
+                            <input class="c-input js-name-input" type="text" name="name" id="name" required>
+                            <label class="c-label js-name-label c-label--can-float" for="name">         
+                                Name               
+                            </label>
+                        </p>
+
                         <p class="c-form-field js-email-field">
                             <label class="c-label" for="username">
                                 Email address    
